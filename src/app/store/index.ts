@@ -1,11 +1,11 @@
 import { ActionReducerMap } from "@ngrx/store";
-import { Product } from "../domain/product";
-import { reducer } from "./cart.reducer";
+import { reducer } from "./job.reducer";
+import { Job } from "../domain/entities/job";
 
 export interface AppState {
-  products: Product[];
+  jobs: Job[];
 }
 
 export const appReducers: ActionReducerMap<AppState, any> = {
-  products: reducer
+  jobs: reducer
 }

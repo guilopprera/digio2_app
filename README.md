@@ -1,27 +1,7 @@
 # VagasEmprego
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+O projeto foi criado utilizando a versão 15 do Angular e Ionic em sua última versão (v7) seguindo todos o layout estabelecidos no frontend (Web e Mobile). A API foi criada e estruturada seguindo o modelo do .NET Core Code First, mas durante o desenvolvimento ocorreu um erro na geração da Migration, impossibilitando a utilização do modelo Code First para espelhar todo o contexto da API para o banco de dados em SQL Server, visando toda a aplicação em geral e o prazo de entrega, eu decidi por importar o arquivo JSON no frontend e utilizar o NgRx para o gerenciamento de estados da aplicação, armazenando a lista de empregos e filtrando-os no Angular.
 
-## Development server
+Rode o comando `npm install` e depois `npm start` para inicializar a aplicação.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Caso o projeto apresente algum erro no momento da instalação, exclua o arquivo package-lock.json e faça o passo a passo acima novamente.

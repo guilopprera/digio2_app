@@ -21,7 +21,7 @@
               </ion-chip>
             </div>
 
-            <div class="clear">
+            <div class="clear" [hidden]="!filterList.length">
               <ion-label slot="end" (click)="clearFilter()">Clear</ion-label>
             </div>
           </div>

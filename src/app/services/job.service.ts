@@ -16,8 +16,7 @@ export class JobService {
     return this.http.get(URL_API + "obtertodos", {});
   }
 
-  public async obterListaNgRx(): Promise<Observable<any>> {
+  public async getListNgRx(): Promise<Observable<any>> {
     return await this.http.get("./assets/data.json");
-    // this.store.dispatch(new ObterEmpregos(this.productList));
   }
 }

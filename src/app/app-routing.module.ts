@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'vagas',
-    loadChildren: () => import('./vagas/vagas.module').then(m => m.VagasPageModule)
+    loadChildren: () => import('./pages/vagas/vagas.module').then(m => m.VagasPageModule)
   },
 ];
 
