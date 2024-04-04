@@ -1,0 +1,62 @@
+<!-- <ion-header [translucent]="true"> -->
+<!-- </ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <div>
+    <div class="div-header">
+      <ion-img *ngIf="mobileMode" src="../../assets/imgs/bg-header-mobile.svg"></ion-img>
+      <ion-img *ngIf="!mobileMode" src="../../assets/imgs/bg-header-desktop.svg"></ion-img>
+    </div>
+  </div>
+
+  <div class="filters">
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col>
+          <div class="filter-list">
+            <div class="div-filters">
+              <ion-chip *ngFor="let filter of filterList">
+                <ion-label>{{filter}}</ion-label>
+                <ion-icon name="close" (click)="removeFilter($event)"></ion-icon>
+              </ion-chip>
+            </div>
+
+            <div class="clear">
+              <ion-label slot="end" (click)="clearFilter()">Clear</ion-label>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <section>
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col size="12" class="ion-no-padding">
+          <div class="jobs-list">
+            <div class="job" *ngFor="let job of jobsList">
+              <div class="job-img">
+                <ion-img src="{{job.logo}}" alt="" srcset=""></ion-img>
+              </div>
+              <div class="content">
+                <div>
+                  <ion-label color="primary" class="primary">{{job.company}}</ion-label>
+                  <ion-chip class="chip-new" *ngIf="job.new">NEW!</ion-chip>
+                  <ion-chip class="chip-featured" *ngIf="job.featured">FEATURED</ion-chip>
+                </div>
+                <ion-label class="vacancy-name">{{job.position}} </ion-label>
+                <ion-label color="tertiary"> {{job.postedAt}} · {{job.contract}} · {{job.location}}</ion-label>
+              </div>
+              <hr *ngIf="mobileMode">
+              <div class="tags">
+                <ion-chip slot="end" (click)="addFilter($event)"
+                  *ngFor="let language of job.languages ">{{language}}</ion-chip>
+              </div>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+</ion-content>

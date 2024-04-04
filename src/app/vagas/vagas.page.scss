@@ -1,0 +1,267 @@
+ion-chip {
+  font-weight: 700;
+}
+
+.primary {
+  font-weight: 700;
+}
+
+ion-content {
+  --background: #f0fafb;
+
+  .div-header ion-img {
+    background: var(--ion-color-primary);
+  }
+
+  .filters {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    width: 80vw;
+    height: 75px;
+    margin: 0 10vw;
+    border-radius: 6px;
+    box-shadow:
+      rgba(40, 41, 61, 0.08) 2px 3px 20px,
+      rgba(96, 97, 112, 0.16) 0px 1.5px 5px;
+
+    margin-bottom: 50px;
+
+    .filter-list {
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+
+      .div-filters {
+        display: flex;
+      }
+
+      ion-chip {
+        color: var(--ion-color-primary);
+        background-color: var(--ion-color-secondary);
+        border-radius: 5px;
+
+        ion-icon {
+          background: var(--ion-color-primary);
+          color: #fff;
+
+          &:hover {
+            background: var(--ion-color-dark);
+          }
+        }
+      }
+
+      .clear {
+        margin-left: auto;
+        padding-right: 20px;
+        font-weight: 700;
+        color: var(--ion-color-tertiary);
+        cursor: pointer;
+
+        &:hover {
+          color: var(--ion-color-primary);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  section {
+    padding: 0 10vw;
+
+    .jobs-list {
+      width: 100%;
+      height: 175px;
+      border-left: 5px solid transparent;
+
+      .job {
+        border-left: 5px solid transparent;
+        margin: 20px 0;
+        background: #fff;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        padding-right: 30px;
+        border-radius: 6px;
+        transition: border 150ms ease 0.1s;
+        box-shadow:
+          rgba(40, 41, 61, 0.08) 2px 3px 20px,
+          rgba(96, 97, 112, 0.16) 0px 1.5px 5px;
+
+        &:hover {
+          border-left: 5px solid hsl(180, 29%, 50%);
+        }
+
+        .job-img {
+          margin-left: 20px;
+          display: flex;
+          justify-content: center;
+
+          ion-img {
+            width: 100px;
+            height: 100px;
+
+            &::part(image) {
+              border-radius: 50px;
+            }
+          }
+        }
+
+        .content {
+          margin-left: 20px;
+
+          ion-label {
+            margin: 10px 0;
+            display: block;
+
+            &.vacancy-name {
+              color: #000;
+              font-weight: 700;
+            }
+            &.vacancy-name:hover {
+              color: var(--ion-color-primary);
+              cursor: pointer;
+            }
+          }
+
+          ion-chip {
+            &.chip-new {
+              color: var(--ion-color-secondary);
+              background-color: var(--ion-color-primary);
+            }
+
+            &.chip-featured {
+              color: var(--ion-color-secondary);
+              background-color: #000;
+            }
+          }
+
+          div {
+            display: flex;
+            align-items: center;
+
+            ion-label {
+              margin-right: 10px;
+            }
+          }
+        }
+
+        hr {
+          border: 0;
+          clear: both;
+          display: block;
+          width: 90%;
+          height: 2px;
+          background-color: var(--ion-color-secondary);
+        }
+
+        .tags {
+          margin-left: auto;
+
+          ion-chip {
+            color: var(--ion-color-primary);
+            background-color: var(--ion-color-secondary);
+            border-radius: 5px;
+
+            &:hover {
+              color: var(--ion-color-secondary);
+              background-color: var(--ion-color-primary);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  ion-content {
+    .filters {
+      margin: 0 5vw !important;
+      width: auto !important;
+      height: auto !important;
+      padding: 10px;
+
+      .div-filters {
+        display: block !important;
+      }
+    }
+
+    section {
+      padding: 0 5vw !important;
+
+      .jobs-list {
+        height: auto !important;
+
+        .job {
+          height: auto !important;
+          display: block !important;
+          margin: 40px 0 !important;
+          padding-right: 0 !important;
+
+          .job-img {
+            display: block;
+            position: absolute;
+            margin-left: 20px;
+            margin-top: -20px;
+
+            ion-img {
+              width: 50px !important;
+              height: 50px !important;
+
+              &::part(image) {
+                border-radius: 250px !important;
+              }
+            }
+          }
+        }
+
+        .content {
+          padding-top: 40px;
+
+          ion-chip {
+            overflow: visible !important;
+          }
+        }
+
+        .tags {
+          margin-left: 20px !important;
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .job-list {
+    height: 100% !important;
+
+    .job {
+      display: block !important;
+
+      .job-img {
+        display: block;
+        position: absolute;
+        margin-left: 20px;
+        margin-top: -20px;
+
+        ion-img {
+          width: 50px !important;
+          height: 50px !important;
+
+          &::part(image) {
+            border-radius: 250px !important;
+          }
+        }
+      }
+
+      .content {
+        .chip-new {
+          margin-left: 20px;
+        }
+        padding-top: 30px;
+      }
+    }
+  }
+}
